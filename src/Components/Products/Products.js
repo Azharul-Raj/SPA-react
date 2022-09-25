@@ -9,14 +9,18 @@ const Products = () => {
         fetch('products.json')
             .then(res => res.json())
         .then(data=>setProducts(data))
-    },[])
+    }, [])
+    const handleCart = (product) => {
+        console.log(product)
+    }
+
     return (
         <div>
             <h2>TOTAL PRODUCTS : { products.length}</h2>
             <div className="main-container">
                 <div className="products-container">
                     {
-                        products.map(product => <Product key={product.id} product={ product} />)
+                        products.map(product => <Product key={product.id} product={ product} handleCart ={handleCart}/>)
                     }
                 </div>
                 <div className="order-summery">
