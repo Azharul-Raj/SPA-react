@@ -7,8 +7,8 @@ const Product = ({product,handleCart}) => {
         <div className='product'>
             <img className='img' src={img} alt="" />
             <div className="details">
-                <h4>{name}</h4>
-                <h5>Price : {price}</h5>
+                <h4>{name.length>30?name.slice(0,25)+'...':name}</h4>
+                <h5>Price : {price}$</h5>
                 <p><small>Category : {category}</small></p>
                 <p><small>Rating: {ratings}</small></p>
             </div>
