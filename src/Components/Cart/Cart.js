@@ -4,8 +4,11 @@ import './Cart.css'
 
 
 const Cart = ({ cart }) => {
+    let quantity = 0
+
     const totalPrice = cart.reduce((acc, curr) => {
-        acc += curr.price
+        quantity+=1
+        acc += curr.price * quantity
         return acc
     }, 0)
     const totalShipping = cart.reduce((acc, curr) => {
