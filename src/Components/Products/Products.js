@@ -32,7 +32,16 @@ const Products = () => {
     },[products])
 
     const handleCart = (product) => {
-        const newCart = [...cart, product]
+        let newCart=[]
+        const existItem = cart.find(item => item.id === product.id)
+        if (!existItem) {
+            product.quantity = 1
+            newCart =[...cart,product]
+        }
+        else {
+            
+        }
+        
         setCart(newCart)
         addToLocalStore(product.id)
     }

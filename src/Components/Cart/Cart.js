@@ -7,7 +7,7 @@ const Cart = ({ cart }) => {
     let quantity = 0
 
     const totalPrice = cart.reduce((acc, curr) => {
-        quantity+=1
+        quantity+=curr.quantity
         acc += curr.price * quantity
         return acc
     }, 0)
@@ -21,7 +21,7 @@ const Cart = ({ cart }) => {
     return (
         <div className='order-details'>
             <h2>Order summery </h2>
-            <p>Selected Item : {cart.length}</p>
+            <p>Selected Item : {quantity}</p>
             <p>Total Price: {totalPrice}$</p>
             <p>Total Shipping : {totalShipping}$</p>
             <p>Total Tax : { totalTax}$</p>
