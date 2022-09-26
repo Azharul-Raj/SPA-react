@@ -12,7 +12,7 @@ const Cart = ({ cart }) => {
         return acc
     }, 0)
     const totalShipping = cart.reduce((acc, curr) => {
-        acc += curr.shipping
+        acc += curr.shipping 
         return acc
     }, 0)
     const totalTax = ((totalPrice + totalShipping) * .1).toFixed(2)

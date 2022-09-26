@@ -39,7 +39,9 @@ const Products = () => {
             newCart =[...cart,product]
         }
         else {
-            
+            const restItem = cart.filter(item => item.id !== product.id)
+            existItem.quantity = existItem.quantity + 1
+            newCart=[...restItem,existItem]
         }
         
         setCart(newCart)
